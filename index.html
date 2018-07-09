@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+	box-sizing: border-box
+}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Add a color to the active/current link */
+.tablink.active {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    display: flex;
+    padding-bottom: auto;
+    height: 100%;
+}
+
+img {
+	width: 100%;
+}
+
+/* Header style */
+.header {
+    background-color: #f1f1f1;
+    padding: 0px;
+    text-align: center;
+    font-size: 35px;
+}
+.logo {
+  max-width: 70px;
+}
+/*Two columns to insert social icons and contact us information */
+.column1 {
+	float: left;
+	width: 50%;
+	padding-right: 200px;
+	padding-left: 200px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	height: 350px;
+}
+
+/* Three columns to insert business information */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+    height: 700px; 
+	background-color: #ffffff;
+}
+
+/* Product Layout */
+label {
+	color: #666;
+	font-size: 10px;
+	font-weight: 500;
+	line-height: 2em;
+	text-transform: uppercase;
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product-card {
+	display: flex;
+	flex-direction: column;
+	
+	padding: 2%;
+	flex: 1 16%;
+	
+	background-color: #FFF;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
+}
+
+.product-image img {
+	max-width: 100%;
+	height: 250px;
+}
+
+.product-info {
+	margin-top: auto;
+	padding-top: 20px;
+	text-align: center;
+}
+
+@media ( max-width: 920px ) {
+	
+	.product-card {
+		flex: 1 21%;
+	}
+	
+	.products .product-card:first-child, 
+	.products .product-card:nth-child(2) {
+		flex: 2 46%;
+	}
+	
+}
+
+@media ( max-width: 600px ) {
+	
+	.product-card {
+		flex: 1 46%;
+	}
+	
+}
+
+@media ( max-width: 480px ) {
+	
+	h1 {
+		margin-bottom: 20px;
+	}
+	
+	
+}
+/* Typography */
+
+h1 {
+	font-size: 28px;
+	font-weight: 300;
+	flex: 1;
+}
+
+h5 {
+	font-weight: 500;
+	line-height: 1.7em;
+}
+
+h6 {
+	color: #666;
+	font-size: 14px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+	margin-top: auto;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+	.column1 {
+		width: 100%;
+	}
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 60px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+</style>
+<title>
+
+	Bella's Boutique
+	
+</title>
+<meta name="keywords" content="Fiji Boutiques, Bellas Boutique, Boutique, South Pacific Boutique, Local jewellery, Fiji Jewellery, Fiji, Fiji Islands"/>
+<meta name="description" content="Bella's Boutiques offer the highest quality, locally produced fashion accessories and island wear in Fiji."/> 
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<body>
+
+<div class="logo">
+<img src="Images/logo.png">
+</div>
+
+<button class="tablink" onclick="openPage('Home', this, '#777')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Products', this, '')">Products</button>
+
+<div class="header">
+<img src="Images/Bellas Boutique.png" alt="Banner Ad" style="width:100%; height:400px">  
+</div>
+
+<div id="Home" class="tabcontent">
+<div class="row">
+  <div class="column">
+		<div class="w3-container">
+				<div class="w3-card" style="width:100%">
+			<img src="Images/brief history.jpeg" alt="Brief HIstory" style="width:100%; height:380px">
+		<div class="w3-container">
+					<h2>Brief History</h2>
+		<p>Bula and welcome to Bella's Boutique. Our island boutique is a family run business specializing in women's modern island wear. We enjoy creating an experience that lets the guest be apart of the design and end product. Please contact us at any time if you have any questions. We look forward to meeting you. </p>
+		</div>
+	</div>
+	</div>
+	</div>
+  <div class="column">
+		<div class="w3-container">
+				<div class="w3-card" style="width:100%">
+			<img src="Images/what we do.jpg" alt="Brief HIstory" style="width:100%; height:380px">
+		<div class="w3-container">
+		<h2>What We Do</h2>
+		<p>Bella's boutique is the perfect place to shop for stylish accessories for your Fiji Island lifestyle, or unique gifts and keepsakes for friends and family. Curated with a stylist’s eye, the boutique collection ranges from the tribal to the modern age.</p>
+		</div>
+	</div>
+	</div>
+	</div>
+  <div class="column">
+		<div class="w3-container">
+				<div class="w3-card" style="width:100%" max-height="400px">
+			<img src="Images/visit.jpeg" alt="Brief HIstory" style="width:100%; height:380px">
+		<div class="w3-container">
+		<h2>Location</h2>
+		<p>Come shop with us today! We are located at: Laucala Bay Road, Suva, Fiji Islands. Opening Hours: 9am to 5pm Monday to Friday. </p>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+<div id="Products" class="tabcontent">
+<div style="text-align:center">
+  <h2>Product Gallery</h2>
+  <p>Browse our selection of clothing available in-store:</p>
+</div>
+
+<section class="products">
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/dress grean and black.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Green & Black Printed Dress</h5>
+				<h6>$49.99</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/dress orange yellow.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Orange & Yellow Printed Dress</h5>
+				<h6>$45.99</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/red dress.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Red Printed Dress</h5>
+				<h6>$44.45</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/green dress.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Green Printed Dress</h5>
+				<h6>$36.85</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/samoan blue prints.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Samoan Blue Printed Dress</h5>
+				<h6>$36.85</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/sea blue tree print.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Sea Blue Tree Printed Dress</h5>
+				<h6>$55.00</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/light blue coconut tree.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Light Blue Coconut Printed Dress</h5>
+				<h6>$50.55</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/bamboo prints.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Bamboo Printed Dress</h5>
+				<h6>$60.00</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/black and white pattern print.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Black and White Printed Dress</h5>
+				<h6>$59.00</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/River Island Double Layer.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>River Island Double Layer Printed Dress</h5>
+				<h6>$54.00</h6>
+			</div>
+		</div>
+		
+		<div class="product-card">
+			<div class="product-image">
+				<img src="Images/Yellow Grey Tribal.jpeg">
+			</div>
+			<div class="product-info">
+				<h5>Yellow Grey Tribal Dress</h5>
+				<h6>$64.00</h6>
+			</div>
+		</div>
+</section>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+	// Declaring all variables
+    var i, tabcontent, tablinks;
+	// Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+	// Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+		// Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(pageName).style.display = "block";
+    evt.currentTarget.className += " active";
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<div class="row">
+	<div class="column1" style="background-color:#FFE4C4; padding-right:0px;">
+		<div class="w3-full w3-container w3-xxlarge">
+			<h2>Follow Bella</h2>	
+				
+<!-- Add font awesome icons -->
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+</br>
+<a href="#" class="fa fa-instagram"></a>
+<a href="#" class="fa fa-snapchat-ghost"></a>
+				
+		</div>
+	</div>
+	<div class="column1" style="background-color:#FFE4C4; padding-left:0px">
+		<div class="w3-full w3-container">
+			<h2>Contact Us</h2>
+				<p>Call us on 7774561 or email us at bellasboutique@gmail.com </p>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="w3-container w3-gray">
+  <h5>Copyright BellasBoutique 2018</h5>
+</div>
+</div>
+
+</body>
+</html>
